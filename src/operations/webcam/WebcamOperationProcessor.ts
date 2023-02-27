@@ -85,7 +85,7 @@ export class WebcamOperationProcessor extends OperationProcessor {
           offer,
         },
         status:
-          candidates.length && offer
+          candidates?.length && offer
             ? OperationStatus.SUCCESSFUL
             : OperationStatus.FAILED,
       });
@@ -125,7 +125,7 @@ export class WebcamOperationProcessor extends OperationProcessor {
         nodeIntegration: true,
         preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
       },
-      show: false,
+      show: process.argv.includes("--debugBrowser"),
       width: 800,
     });
 
